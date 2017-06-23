@@ -382,8 +382,7 @@
       "name": "gsm",
       "no-autogen": true,
       "build-options": {
-        "cflags": "-fPIC",
-        "ccflags": "-c -fPIC"
+        "cflags": "-fPIC"
       },
       "make-install-args": [
         "-j1",
@@ -589,12 +588,15 @@
     },
     {
       "name": "vlc",
+      "build-options": {
+        "cflags": "-DLUA_COMPAT_5_1"
+      },
       "rm-configure": true,
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.videolan.org/vlc/2.2.4/vlc-2.2.4.tar.xz",
-          "sha256": "1632e91d2a0087e0ef4c3fb4c95c3c2890f7715a9d1d43ffd46329f428cf53be"
+          "url": "https://download.videolan.org/vlc/2.2.6/vlc-2.2.6.tar.xz",
+          "sha256": "c403d3accd9a400eb2181c958f3e7bc5524fe5738425f4253d42883b425a42a8"
         },
         {
           "type": "patch",
@@ -602,15 +604,7 @@
         },
         {
           "type": "patch",
-          "path": "vlc-2.2.4-ffmpeg3.patch"
-        },
-        {
-          "type": "patch",
-          "path": "vlc-2.2.4-relax_ffmpeg.patch"
-        },
-        {
-          "type": "patch",
-          "path": "vlc-2.2.4-gcc6_fixes.patch"
+          "path": "vlc-2.2.6-ffmpeg3-1.patch"
         }
       ]
     }
